@@ -1,0 +1,12 @@
+/**
+ * This CSS module contains all styles associated with /components/appBarComponents.tsx
+ */
+
+/** Search Bar */
+.searchBar {
+  --kup-textfield-background-color-rgb: var(--kup-navbar-color-rgb);
+  --kup-textfield-font-size: 1.375em;
+  --kup-textfield-icon-color: var(--kup-navbar-color);
+  padding: 0 12px;
+  width: 100%;
+}

@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--kup-background-color);
+  color: var(--kup-text-color);
+  font-family: var(--kup-font-family);
+  font-size: var(--kup-font-size);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#__next {
+  --kup-navbar-height: 48px;
+  --webup-navbar-height: var(--kup-navbar-height); 
+  
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --webup-bg-color: var(--kup-background-color, white);
+  --webup-grid-cell-bg-color: var(--kup-background-color, white);
+  --webup-grid-cell-padding: 0.5em;
+  --webup-grid-cell-size: minmax(0, auto);
+  --webup-component-title-size: 20px;
+}
+
+#app {
+  --webup-navbar-height: var(--kup-navbar-height);
+}
+
+.webup--is-dashboard {
+  --webup-grid-cell-size: 1fr;
+}
+
+/** component styles */
+.component-title {
+  font-size: var(--webup-component-title-size);
+  margin-bottom: 10px;
+}
+
+
+

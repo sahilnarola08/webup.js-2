@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 24px 96px;
+}
+
+.login {
+  display: flex;
+}
+
+.modules {
+  margin-right: 128px;
+  position: relative;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login {
+    justify-content: center;
+  }
+  .modules {
+    margin-right: 0;
+  }
+  .wrapper {
+    padding: 16px;
+  }
+}

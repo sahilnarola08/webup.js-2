@@ -1,0 +1,31 @@
+version: '3'
+services:
+
+  openproxy:
+    image: openproxy
+    restart: unless-stopped
+    build:
+      context: ../open-proxy-project/
+      args:
+        BUILD_PROFILE: 'redup'
+    environment:
+      token.duration.minutes: 1440
+      fun.repository.dir: /opt/payara/fun
+    volumes:
+      - ../open-proxy-project/redup/fun:/opt/payara/fun
+    ports:
+      - '8080:8080'
+
+  webupjs:
+    image: webupjs
+    restart: unless-stopped
+    build:
+      args:
+        WEBUPJS_APP_CONTEXT: '/webup-js'
+    volumes:
+      - <local-.env>:/app/.env
+      - <local-config.json>:/app/config.json
+    environment:
+      WEBUPJS_CONFIG_URL: /app/config.json
+    ports:
+      - '3000:3000'

@@ -1,0 +1,305 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 24px 96px;
+}
+
+.login {
+  display: flex;
+}
+
+.modules {
+  max-width: 560px;
+  min-width: 460px;
+}
+
+.form,
+.modules {
+  background-color: var(--kup-background-color);
+  border-radius: 16px;
+  box-shadow: var(--kup-box-shadow);
+  box-sizing: border-box;
+  height: max-content;
+  padding: 24px 32px;
+  width: max-content;
+}
+
+.form {
+  margin: auto 0;
+  position: relative;
+}
+
+.form__modules_wrapper {
+  display: none;
+}
+
+.form__login_field {
+  margin-top: 7px;
+}
+
+.modules {
+  margin-right: 128px;
+  position: relative;
+}
+
+.modules__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modules__head {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 12px;
+  opacity: 0.75;
+}
+
+.modules__headerbtns {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.modules__list {
+  height: 240px;
+  margin: 16px 0;
+  overflow: auto;
+}
+
+.modules__list__hidden {
+  display: none;
+}
+
+.modules__list__hidden.visible {
+  display: block;
+}
+
+.modules__item,
+.modules__item__hidden {
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--kup-border-color);
+  cursor: pointer;
+  display: flex;
+  margin: 12px 0;
+  padding: 4px 8px;
+  position: relative;
+  transition: background-color 125ms ease;
+}
+.modules__item__hidden {
+  cursor: auto;
+}
+
+.modules__item__icon {
+  display: block;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
+
+.modules__item:before,
+.modules__item__hidden:before {
+  background-color: var(--kup-primary-color);
+  border-radius: 4px;
+  content: "";
+  display: none;
+  height: 3px;
+  width: calc(100% - 16px);
+  position: absolute;
+}
+
+.modules__item__active {
+  background: rgba(var(--kup-text-color-rgb), 0.275);
+}
+
+.modules__item.modules__item__over:before {
+  display: block;
+}
+
+.modules__item.modules__item__over__top:before {
+  top: -8px;
+}
+
+.modules__item.modules__item__over__bottom:before {
+  bottom: -8px;
+}
+
+.modules__item:not(.modules__item__active):hover {
+  background: rgba(var(--kup-text-color-rgb), 0.075);
+}
+
+.modules__item__handle {
+  display: block;
+  height: 32px;
+  width: 32px;
+}
+
+.modules__item__handle:before {
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.modules__item__label {
+  font-size: 14px;
+  padding: 0 8px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.modules__logo {
+  display: block;
+  margin: 48px auto 0 auto;
+}
+
+.modules__hidden {
+  display: block;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.modules__module {
+  padding: 8px;
+}
+
+.form__mobile,
+.form__connected {
+  margin: 12px 0;
+}
+
+kup-text-field.login:first-of-type {
+  margin-top: 32px;
+}
+
+kup-text-field.login {
+  margin-bottom: 16px;
+}
+
+.form__extra_options__hidden {
+  visibility: hidden;
+}
+
+.form__extra_panel {
+  position: absolute;
+  left: calc(-100% - 24px);
+  bottom: 0;
+  z-index: 1;
+  box-shadow: var(--kup-box-shadow);
+  border-radius: 16px;
+  background: var(--kup-background-color);
+  width: 100%;
+  padding: 16px 32px;
+}
+
+.form__extra_panel__hidden {
+  visibility: hidden;
+}
+
+.form__extra_button {
+  margin-right: 48px;
+}
+
+.form__extra_options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.form__google-button,
+.form__azure-button {
+  margin: 24px 0;
+}
+
+.form__separator {
+  letter-spacing: 2px;
+  margin: 8px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.form__subtitle,
+.modules__subtitle {
+  font-size: 12px;
+  margin-top: 0;
+  opacity: 0.75;
+}
+
+.form__title,
+.modules__title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.form__extra_panel__hidden,
+.form__hidden {
+  display: none;
+}
+
+kup-checkbox.login {
+  margin: 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-margin-5 {
+  margin-right: 8px;
+}
+
+.vertical-span {
+  margin-bottom: 24px;
+}
+
+.logoLogin {
+  display: flex;
+  margin: auto;
+  max-width: 160px;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    width: 80vw;
+  }
+  .form__extra_options {
+    justify-content: center;
+  }
+  .form__login_field {
+    margin-top: 21px;
+    padding: 0 16px;
+  }
+  .modules__logo {
+    margin-top: 8px;
+  }
+  .modules,
+  .form__extra_button,
+  .form__subtitle,
+  .form__title {
+    display: none;
+  }
+  .form__modules_wrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    letter-spacing: 0.5px;
+    justify-content: center;
+  }
+  .form__modules_accordion {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 16px;
+    overflow: hidden;
+    text-align: center;
+  }
+}

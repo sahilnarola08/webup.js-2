@@ -1,0 +1,25 @@
+body {
+  --kup-box-grid-gap: 4px;
+  --kup-font-size: 18px;
+  --kup-navbar-background-color: var(--kup-primary-color);
+  --kup-primary-color: #f7993a;
+  --kup-primary-color-rgb: 247, 153, 58;
+  --kup-primary-color-h: 30;
+  --kup-primary-color-s: 92%;
+  --kup-primary-color-l: 60%;
+  --kup-drawer-color: white;
+  --kup-drawer-background-color: #002c64;
+}
+
+kup-nav-bar {
+  --kup-font-size: 14px;
+}
+
+kup-form {
+  --kup-form-padding: 0;
+  --kup-font-size: 20px;
+}
+
+kup-form ~ kup-button-list {
+  --kup-button-font-size: 22px;
+}

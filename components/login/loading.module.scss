@@ -1,0 +1,10 @@
+.spinner {
+    background: var(--kup-background-color, white);
+    height: 100vh;
+    opacity: 1;
+    position: fixed;
+    opacity: 1;
+    transition: opacity 250ms ease-out;
+    width: 100vw;
+    z-index: 100;
+  }  

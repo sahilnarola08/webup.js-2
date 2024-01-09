@@ -1,0 +1,35 @@
+.grid {
+  &__wrapper {
+    background-color: var(--webup-bg-color);
+    display: grid;
+    height: var(--webup-grid-wrapper-height);
+    grid-gap: var(--webup-grid-gap);
+    overflow: var(--webup-grid-wrapper-overflow);
+  }
+
+  &__cell {
+    height: var(--webup-grid-cell-height);
+    overflow: var(--webup-grid-cell-overflow);
+    width: 100%;
+
+    &:not(.grid__wrapper) {
+      background-color: var(--webup-grid-cell-bg-color);
+      overflow: auto;
+      padding: var(--webup-grid-cell-padding);
+    }
+
+    &__auto_columns {
+      --kup-lazy-ver-alignment: flex-start;
+
+      grid-auto-flow: column;
+    }
+
+    &__auto_rows {
+      grid-auto-flow: row;
+    }
+
+    kup-lazy {
+      min-height: 64px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.webup {
+  --kup-card-scalable-box-shadow: none;
+
+  background-color: var(--webup-bg-color);
+  display: grid;
+  grid-template-areas: "content";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  transition: all 250ms;
+  width: 100%;
+
+  &__has_drawer {
+    grid-template-areas: "drawer content";
+    grid-template-columns: var(--kup-drawer-width) 1fr;
+  }
+
+  &__has_navbar {
+    grid-template-areas: "nav-bar nav-bar" "content content";
+    grid-template-rows: var(--webup-navbar-height) 1fr;
+  }
+
+  &__has_navbar.webup__has_drawer {
+    grid-template-areas: "nav-bar nav-bar" "drawer content";
+  }
+
+  &__is_dashboard {
+    --webup-grid-cell-height: 100%;
+    --webup-grid-cell-overflow: auto;
+    --webup-grid-cell-size: 1fr;
+    --webup-grid-gap: 0;
+    --webup-grid-wrapper-height: 100%;
+    --webup-grid-wrapper-overflow: hidden;
+
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.drawer {
+  grid-area: drawer;
+}
+
+.content {
+  background-color: var(--webup-bg-color);
+  grid-area: content;
+  overflow: auto;
+  padding: var(--webup-grid-cell-padding);
+}

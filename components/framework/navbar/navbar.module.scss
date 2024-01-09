@@ -1,0 +1,22 @@
+.navbar {
+  --kup-navbar-padding: 0;
+
+  grid-area: navbar;
+}
+
+.left,
+.right {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.logo {
+  margin: 0;
+  padding: 4px;
+}
