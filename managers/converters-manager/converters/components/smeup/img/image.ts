@@ -4,6 +4,7 @@ import {
   ComponentOptions,
   KupComponent,
 } from "../../../../declarations/component";
+import { YesNo } from "../../../../declarations/data-structures/general";
 
 /**
  * Image
@@ -30,6 +31,15 @@ export interface ImageData {
 export interface ImageOptions extends ComponentOptions {
   shape: Shapes.IMG;
 }
+
+export interface ImageListOptions extends ComponentOptions {
+  Stretch: YesNo;
+  Zoomable?: YesNo;
+  Editable?: YesNo;
+  Drag?: YesNo;
+  ImageCache?: YesNo;
+}
+
 
 /**
  * Image config

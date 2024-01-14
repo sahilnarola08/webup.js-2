@@ -24,7 +24,7 @@ import { isDashboardMode } from "../../../store/reduces/fixedElements";
 import Pln from "../pln/pln";
 import Spl from "../spl/spl";
 import { logInfo } from "../../../utils/logger";
-
+import Img from "../img/img";
 type Props = {
   section: Section;
 };
@@ -33,7 +33,7 @@ const Sez: React.FC<Props> = props => {
   const hasComponents = !!props.section.components;
   const hasSections = !!props.section.sections;
 
-  useEffect(() => {});
+  useEffect(() => { });
 
   logInfo("render", "sez.tsx");
   const style = componentStyles(
@@ -48,8 +48,8 @@ const Sez: React.FC<Props> = props => {
       {hasSections
         ? iterateSections(props.section)
         : hasComponents
-        ? iterateComponents(props.section.components)
-        : null}
+          ? iterateComponents(props.section.components)
+          : null}
     </div>
   );
 };
@@ -79,6 +79,8 @@ const iterateComponents = (components: RawComponent[]) => {
               return <Box key={component.id} rawComponent={component} />;
             case Shapes.BTN:
               return <Btn key={component.id} rawComponent={component} />;
+            case Shapes.IMG:
+              return <Img key={component.id} imgSrc="" rawComponent={component} />;
             case Shapes.INP:
               return <Inp key={component.id} rawComponent={component} />;
             case Shapes.LAB:
