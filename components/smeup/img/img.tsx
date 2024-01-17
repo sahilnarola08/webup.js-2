@@ -1,6 +1,9 @@
-
 import React, { useEffect, useRef } from "react";
-import { RawComponent, Shapes } from "../../../declarations/componentDeclarations";
+import {
+  RawComponent,
+  Shapes,
+} from "../../../declarations/componentDeclarations";
+
 import { KupImage, KupAccordion } from "@sme.up/ketchup-react";
 import { RootState } from "../../../store/store";
 import { getComponentById } from "../../../store/reduces/components";
@@ -15,15 +18,14 @@ type Props = {
   // sizeY: string,
 };
 
-const defaultProps: Partial<Props> = {
-  imgSrc: "https://ketchup.smeup.com/ketchup-showcase/header_logo.svg",
-  sizeX: "auto",
-  sizeY: 'auto',
-};
-
+// const defaultProps: Partial<Props> = {
+//   imgSrc: "https://ketchup.smeup.com/ketchup-showcase/header_logo.svg",
+//   sizeX: "auto",
+//   sizeY: 'auto',
+// };
 
 // const Img: React.FC<Props> = ({ imgSrc = defaultProps.imgSrc, sizeX = defaultProps.sizeX, sizeY = defaultProps.sizeY }) => {
-const Img: React.FC<Props> = (props) => {
+const Img: React.FC<Props> = props => {
   const imageData: any = useSelector((state: RootState) =>
     getComponentById(state, props.rawComponent.id),
   ) as any;
@@ -56,12 +58,10 @@ const Img: React.FC<Props> = (props) => {
   });
 
   useEffect(() => {
-   console.log('imageData 🎈🎈🎈', imageData)
-  }, [imageData])
-  
+    console.log("imageData 🎈🎈🎈", imageData);
+  }, [imageData]);
 
   return (
-
     <KupImage
       // size-x={sizeX}
       // size-y={sizeY}
@@ -69,10 +69,8 @@ const Img: React.FC<Props> = (props) => {
       // resource={"https://ketchup.smeup.com/ketchup-showcase/header_logo.svg"}
       resource={imageData?.data?.resource}
       ref={imageRef}
-    >
-    </KupImage >
-
-  )
+    ></KupImage>
+  );
 };
 
 export default Img;

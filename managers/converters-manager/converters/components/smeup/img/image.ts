@@ -29,6 +29,25 @@ export interface ImageData {
  * Image options
  */
 export interface ImageOptions extends ComponentOptions {
+  Stretch?: YesNo;
+  Zoomable?: YesNo;
+  Editable?: YesNo;
+  Drag?: YesNo;
+  ImageCache?: YesNo;
+}
+// export interface ImageOptions extends ComponentOptions {
+//   shape: Shapes.IMG;
+// }
+
+export interface ImageListOptions extends ComponentOptions {
+  Stretch: YesNo;
+  Zoomable?: YesNo;
+  Editable?: YesNo;
+  Drag?: YesNo;
+  ImageCache?: YesNo;
+}
+
+export interface ImageListOptions extends ComponentOptions {
   Stretch: YesNo;
   Zoomable?: YesNo;
   Editable?: YesNo;
@@ -47,7 +66,6 @@ export interface ImageListOptions extends ComponentOptions {
   ImageCache?: YesNo;
 }
 
-
 export interface ImageListOptions extends ComponentOptions {
   Stretch: YesNo;
   Zoomable?: YesNo;
@@ -55,7 +73,6 @@ export interface ImageListOptions extends ComponentOptions {
   Drag?: YesNo;
   ImageCache?: YesNo;
 }
-
 
 /**
  * Image config
