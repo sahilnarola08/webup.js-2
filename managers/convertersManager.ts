@@ -138,6 +138,7 @@ export const convertersManager = (
     case Shapes.FLD:
       return fieldConverter(options as FieldOptions, backendData, kupManager);
     case Shapes.IMG:
+      // console.log('imageConverter(options as ImageOptions, backendData, kupManager) 🎈🎈🎈', imageConverter(options as ImageOptions, backendData, kupManager))
       return imageConverter(options as ImageOptions, backendData, kupManager);
     case Shapes.IML:
       return imageListConverter(

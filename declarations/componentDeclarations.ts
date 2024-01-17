@@ -26,6 +26,7 @@ import { InputPanelOptions } from "../managers/converters-manager/converters/com
 import { PlannerOptions } from "../managers/converters-manager/converters/components/smeup/pln/planner";
 import { DashListOptions } from "../managers/converters-manager/converters/components/smeup/dsh/dashList";
 import { KupObj } from "../managers/converters-manager/utils/smeupObjectUtilities";
+import { ImageOptions } from "../managers/converters-manager/converters/components/smeup/img/image";
 
 export interface ComponentEntity {
   type: Shapes;
@@ -106,6 +107,15 @@ export interface ButtonList extends Component {
   type: Shapes.BTN;
   /** component options (::G.SET) */
   options?: ButtonListOptions;
+  /** data */
+  data: TreeNodeExt[];
+  /** props */
+  config: Partial<Components.KupButtonList>;
+}
+export interface IMG extends Component {
+  type: Shapes.BTN;
+  /** component options (::G.SET) */
+  options?: ImageOptions;
   /** data */
   data: TreeNodeExt[];
   /** props */
