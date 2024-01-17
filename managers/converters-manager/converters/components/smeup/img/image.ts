@@ -48,6 +48,15 @@ export interface ImageListOptions extends ComponentOptions {
 }
 
 
+export interface ImageListOptions extends ComponentOptions {
+  Stretch: YesNo;
+  Zoomable?: YesNo;
+  Editable?: YesNo;
+  Drag?: YesNo;
+  ImageCache?: YesNo;
+}
+
+
 /**
  * Image config
  */
