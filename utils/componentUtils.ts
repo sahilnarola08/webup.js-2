@@ -18,6 +18,7 @@ import {
   DashList,
   DataTable,
   EventHandlersMap,
+  IMG,
   InputPanel,
   Label,
   Planner,
@@ -72,6 +73,7 @@ import {
 import { addVariable } from "../managers/variablesManager";
 import { ComponentOptions } from "../managers/converters-manager/declarations/component";
 import { logInfo, logWarning } from "./logger";
+import { KupImageComponent } from "../managers/converters-manager/converters/components/smeup/img/image";
 
 /**
  * Generate component id
@@ -564,6 +566,11 @@ const initializeComponentByType = (type: Shapes, component: Component) => {
       c.config = undefined;
       break;
     }
+    case Shapes.IMG: {
+      const c: IMG = component as IMG;
+      c.config = undefined;
+      break;
+    }
     case Shapes.INP: {
       const c: InputPanel = component as InputPanel;
       c.config = undefined;
@@ -657,6 +664,15 @@ const completeComponentDataByType = (
     case Shapes.BTN: {
       const c: ButtonList = component as ButtonList;
       const ret: KupButtonListComponent = retData as KupButtonListComponent;
+      c.data = ret.data;
+      c.config = ret.config;
+      expandVariablesInComponentTreeNode(c.data, c);
+      break;
+    }
+    case Shapes.IMG: {
+      // const c: IMG = component as IMG;
+      const c: any = component as any;
+      const ret: KupImageComponent = retData as KupImageComponent;
       c.data = ret.data;
       c.config = ret.config;
       expandVariablesInComponentTreeNode(c.data, c);
