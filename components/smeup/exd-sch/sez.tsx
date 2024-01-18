@@ -24,7 +24,7 @@ import { isDashboardMode } from "../../../store/reduces/fixedElements";
 import Pln from "../pln/pln";
 import Spl from "../spl/spl";
 import { logInfo } from "../../../utils/logger";
-import Img from "../img/img";
+import Image from "../img/img";
 type Props = {
   section: Section;
 };
@@ -79,9 +79,8 @@ const iterateComponents = (components: RawComponent[]) => {
               return <Box key={component.id} rawComponent={component} />;
             case Shapes.BTN:
               return <Btn key={component.id} rawComponent={component} />;
-            case Shapes.IMG:
-              // return <Img key={component.id} imgSrc="" rawComponent={component} />;
-              return <Img key={component.id}  rawComponent={component} />;
+            case Shapes.IMAGE:
+              return <Image key={component.id}  rawComponent={component} />;
             case Shapes.INP:
               return <Inp key={component.id} rawComponent={component} />;
             case Shapes.LAB:

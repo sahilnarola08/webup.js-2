@@ -14,7 +14,6 @@ import {
 } from "@sme.up/ketchup/dist/types/managers/kup-interact/kup-interact-declarations";
 import { KupScrollOnHoverElement } from "@sme.up/ketchup/dist/types/managers/kup-scroll-on-hover/kup-scroll-on-hover-declarations";
 import { logInfo } from "../../utils/logger";
-import Img from "../smeup/img/img";
 
 const LoginModules: React.FC<{ config: ApplicationConfigData }> = config => {
   const dispatch = useDispatch();
@@ -302,7 +301,6 @@ const LoginModules: React.FC<{ config: ApplicationConfigData }> = config => {
       <h4 className={styles.modules__subtitle}>
         {"Selezionare il modulo con cui eseguire l'accesso"}
       </h4>
-      {/* <Img /> */}
       <span id="modulesItems">
         <div className={styles.modules__list} ref={wrapper}>
           {modulesJsx}

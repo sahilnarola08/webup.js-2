@@ -5,12 +5,14 @@ import {
   KupComponent,
 } from "../../../../declarations/component";
 import { YesNo } from "../../../../declarations/data-structures/general";
+import { TreeNodeExt } from "../tre/tree";
 
 /**
  * Image
  */
 export interface KupImageComponent extends KupComponent {
   /** data */
+  // data: TreeNodeExt[];
   data: ImageData;
   /** config */
   config: ImageConfig;
@@ -29,6 +31,7 @@ export interface ImageData {
  * Image options
  */
 export interface ImageOptions extends ComponentOptions {
+  shape: Shapes.IMAGE;
   Stretch?: YesNo;
   Zoomable?: YesNo;
   Editable?: YesNo;
@@ -36,43 +39,14 @@ export interface ImageOptions extends ComponentOptions {
   ImageCache?: YesNo;
 }
 // export interface ImageOptions extends ComponentOptions {
-//   shape: Shapes.IMG;
+//   shape: Shapes.IMAGE;
 // }
 
-export interface ImageListOptions extends ComponentOptions {
-  Stretch: YesNo;
-  Zoomable?: YesNo;
-  Editable?: YesNo;
-  Drag?: YesNo;
-  ImageCache?: YesNo;
-}
-
-export interface ImageListOptions extends ComponentOptions {
-  Stretch: YesNo;
-  Zoomable?: YesNo;
-  Editable?: YesNo;
-  Drag?: YesNo;
-  ImageCache?: YesNo;
-}
 // export interface ImageOptions extends ComponentOptions {
-//   shape: Shapes.IMG;
+//   shape: Shapes.IMAGE;
 // }
 
-export interface ImageListOptions extends ComponentOptions {
-  Stretch: YesNo;
-  Zoomable?: YesNo;
-  Editable?: YesNo;
-  Drag?: YesNo;
-  ImageCache?: YesNo;
-}
 
-export interface ImageListOptions extends ComponentOptions {
-  Stretch: YesNo;
-  Zoomable?: YesNo;
-  Editable?: YesNo;
-  Drag?: YesNo;
-  ImageCache?: YesNo;
-}
 
 /**
  * Image config

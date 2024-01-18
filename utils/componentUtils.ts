@@ -18,7 +18,7 @@ import {
   DashList,
   DataTable,
   EventHandlersMap,
-  IMG,
+  Image,
   InputPanel,
   Label,
   Planner,
@@ -566,8 +566,8 @@ const initializeComponentByType = (type: Shapes, component: Component) => {
       c.config = undefined;
       break;
     }
-    case Shapes.IMG: {
-      const c: IMG = component as IMG;
+    case Shapes.IMAGE: {
+      const c: Image = component as Image;
       c.config = undefined;
       break;
     }
@@ -669,8 +669,7 @@ const completeComponentDataByType = (
       expandVariablesInComponentTreeNode(c.data, c);
       break;
     }
-    case Shapes.IMG: {
-      // const c: IMG = component as IMG;
+    case Shapes.IMAGE: {
       const c: any = component as any;
       const ret: KupImageComponent = retData as KupImageComponent;
       c.data = ret.data;
