@@ -137,7 +137,7 @@ export const convertersManager = (
       );
     case Shapes.FLD:
       return fieldConverter(options as FieldOptions, backendData, kupManager);
-    case Shapes.IMAGE:
+    case Shapes.IMG:
       return imageConverter(options as ImageOptions, backendData, kupManager);
     case Shapes.IML:
       return imageListConverter(

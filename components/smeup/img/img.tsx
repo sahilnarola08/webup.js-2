@@ -29,7 +29,7 @@ const Image: React.FC<Props> = props => {
       preElabOk.current = await preElabComponent(
         image,
         props.rawComponent,
-        Shapes.IMAGE,
+        Shapes.IMG,
         firstCall,
         dispatch,
         kupManager,

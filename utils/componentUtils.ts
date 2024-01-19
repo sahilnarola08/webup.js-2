@@ -566,7 +566,7 @@ const initializeComponentByType = (type: Shapes, component: Component) => {
       c.config = undefined;
       break;
     }
-    case Shapes.IMAGE: {
+    case Shapes.IMG: {
       const c: Image = component as Image;
       c.config = undefined;
       break;
@@ -669,7 +669,7 @@ const completeComponentDataByType = (
       expandVariablesInComponentTreeNode(c.data, c);
       break;
     }
-    case Shapes.IMAGE: {
+    case Shapes.IMG: {
       const c: any = component as any;
       const ret: KupImageComponent = retData as KupImageComponent;
       c.data = ret.data;

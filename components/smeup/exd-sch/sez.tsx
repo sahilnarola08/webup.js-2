@@ -79,7 +79,7 @@ const iterateComponents = (components: RawComponent[]) => {
               return <Box key={component.id} rawComponent={component} />;
             case Shapes.BTN:
               return <Btn key={component.id} rawComponent={component} />;
-            case Shapes.IMAGE:
+            case Shapes.IMG:
               return <Image key={component.id}  rawComponent={component} />;
             case Shapes.INP:
               return <Inp key={component.id} rawComponent={component} />;

@@ -5,14 +5,12 @@ import {
   KupComponent,
 } from "../../../../declarations/component";
 import { YesNo } from "../../../../declarations/data-structures/general";
-import { TreeNodeExt } from "../tre/tree";
 
 /**
  * Image
  */
 export interface KupImageComponent extends KupComponent {
   /** data */
-  // data: TreeNodeExt[];
   data: ImageData;
   /** config */
   config: ImageConfig;
@@ -31,20 +29,13 @@ export interface ImageData {
  * Image options
  */
 export interface ImageOptions extends ComponentOptions {
-  shape: Shapes.IMAGE;
+  shape: Shapes.IMG;
   Stretch?: YesNo;
   Zoomable?: YesNo;
   Editable?: YesNo;
   Drag?: YesNo;
   ImageCache?: YesNo;
 }
-// export interface ImageOptions extends ComponentOptions {
-//   shape: Shapes.IMAGE;
-// }
-
-// export interface ImageOptions extends ComponentOptions {
-//   shape: Shapes.IMAGE;
-// }
 
 
 

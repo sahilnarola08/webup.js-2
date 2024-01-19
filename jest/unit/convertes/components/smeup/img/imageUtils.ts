@@ -14,7 +14,7 @@ import {
  */
 export const createFirstImageOptions = (): ImageOptions => {
   return {
-    shape: Shapes.IMAGE,
+    shape: Shapes.IMG,
     dSep: ",",
   };
 };

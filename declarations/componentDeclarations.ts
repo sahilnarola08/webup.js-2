@@ -113,11 +113,12 @@ export interface ButtonList extends Component {
   config: Partial<Components.KupButtonList>;
 }
 export interface Image extends Component {
-  type: Shapes.IMAGE;
+  type: Shapes.IMG;
   /** component options (::G.SET) */
   options?: ImageOptions;
   /** data */
-  data: TreeNodeExt[];
+  data: ImageData;
+  // data: TreeNodeExt[];
   /** props */
   config: Partial<Components.KupButtonList>;
 }
@@ -230,7 +231,7 @@ export enum Shapes {
   FBK = "FBK",
   FLD = "FLD",
   GNT = "GNT",
-  IMAGE = "IMG",
+  IMG = "IMG",
   LAB = "LAB",
   LST = "LST",
   MAT = "MAT", // = EXB
