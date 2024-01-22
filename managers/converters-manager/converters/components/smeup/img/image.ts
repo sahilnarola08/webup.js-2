@@ -11,7 +11,8 @@ import { YesNo } from "../../../../declarations/data-structures/general";
  */
 export interface KupImageComponent extends KupComponent {
   /** data */
-  data: ImageData;
+  data: any;
+  // data: ImageData;
   /** config */
   config: ImageConfig;
 }

@@ -117,10 +117,10 @@ export interface Image extends Component {
   /** component options (::G.SET) */
   options?: ImageOptions;
   /** data */
-  data: ImageData;
-  // data: TreeNodeExt[];
+  data: TreeNodeExt[];
+  // data: ImageData;
   /** props */
-  config: Partial<Components.KupButtonList>;
+  config: Partial<Components.KupImage>;
 }
 
 export interface Label extends Component {

@@ -3,7 +3,7 @@ import { ImageData } from "../../../../../../managers/converters-manager/convert
 /**
  * Image data CNCOL
  */
-export const createImageDataCNCOL = (): ImageData => {
+export const createImageDataCNCOL = ():ImageData  => {
   return {
     obj: {
       t: "CN",

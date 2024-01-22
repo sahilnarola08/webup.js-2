@@ -15,7 +15,7 @@ type Props = {
   rawComponent: RawComponent;
 };
 
-const Image: React.FC<Props> = props => {
+const Img: React.FC<Props> = props => {
   const image: any = useSelector((state: RootState) =>
     getComponentById(state, props.rawComponent.id),
   ) as any;
@@ -65,4 +65,4 @@ const onclick = () =>{
   );
 };
 
-export default Image;
+export default Img;

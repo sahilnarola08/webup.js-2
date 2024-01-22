@@ -670,7 +670,7 @@ const completeComponentDataByType = (
       break;
     }
     case Shapes.IMG: {
-      const c: any = component as any;
+      const c: Image = component as Image;
       const ret: KupImageComponent = retData as KupImageComponent;
       c.data = ret.data;
       c.config = ret.config;
