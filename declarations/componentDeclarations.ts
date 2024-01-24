@@ -26,7 +26,7 @@ import { InputPanelOptions } from "../managers/converters-manager/converters/com
 import { PlannerOptions } from "../managers/converters-manager/converters/components/smeup/pln/planner";
 import { DashListOptions } from "../managers/converters-manager/converters/components/smeup/dsh/dashList";
 import { KupObj } from "../managers/converters-manager/utils/smeupObjectUtilities";
-import { ImageOptions } from "../managers/converters-manager/converters/components/smeup/img/image";
+import { ImageData, ImageOptions } from "../managers/converters-manager/converters/components/smeup/img/image";
 
 export interface ComponentEntity {
   type: Shapes;
@@ -117,8 +117,7 @@ export interface Image extends Component {
   /** component options (::G.SET) */
   options?: ImageOptions;
   /** data */
-  data: TreeNodeExt[];
-  // data: ImageData;
+  data: ImageData;
   /** props */
   config: Partial<Components.KupImage>;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import {
+  Image,
   RawComponent,
   Shapes,
 } from "../../../declarations/componentDeclarations";
@@ -11,14 +12,21 @@ import { useSelector } from "react-redux";
 import { preElabComponent } from "../../../utils/componentUtils";
 import { useDispatch } from "react-redux";
 import useKupManager from "../../../composable/useKupManager";
+import {
+  KupDataColumn,
+  KupDataRow,
+} from "@sme.up/ketchup/dist/types/managers/kup-data/kup-data-declarations";
+
+import { executeRowDynamism } from "../../../managers/dynamismManager";
+import { DynamismEvents } from "../../../declarations/dynamismDeclarations";
 type Props = {
   rawComponent: RawComponent;
 };
 
 const Img: React.FC<Props> = props => {
-  const image: any = useSelector((state: RootState) =>
+  const image: Image = useSelector((state: RootState) =>
     getComponentById(state, props.rawComponent.id),
-  ) as any;
+  ) as Image;
   const imageRef: React.RefObject<any> = useRef(null);
   const preElabOk = useRef(false);
   const firstCall = useRef(true);
@@ -47,20 +55,32 @@ const Img: React.FC<Props> = props => {
     });
   });
 
-const onclick = () =>{
+const onClick = (event) =>{
+  // const column: KupDataColumn = event.detail.column;
+  // const row: KupDataRow = event.detail.row;
 
+  // if (column && kupManager.objects.isButton(column.obj)) {
+  //   executeRowDynamism(
+  //     image.id,
+  //     image.schedaId,
+  //     column,
+  //     image.data.columns,
+  //     row,
+  //     image.dynamisms,
+  //     [DynamismEvents.CLICK],
+  //     kupManager,
+  //     dispatch,
+  //   );
+  // }
 }
 
   return (
     <KupImage
       size-x={"auto"}
       size-y={"auto"}
-      // size-y={sizeY}
-      // resource={imgSrc}
-      // resource={"https://ketchup.smeup.com/ketchup-showcase/header_logo.svg"}
       resource={image?.data?.resource}
       ref={imageRef}
-      onKup-image-click={onclick}
+      onKup-image-click={onClick}
     ></KupImage>
   );
 };

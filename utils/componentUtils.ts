@@ -674,7 +674,6 @@ const completeComponentDataByType = (
       const ret: KupImageComponent = retData as KupImageComponent;
       c.data = ret.data;
       c.config = ret.config;
-      expandVariablesInComponentTreeNode(c.data, c);
       break;
     }
     case Shapes.INP: {
