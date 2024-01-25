@@ -13,11 +13,10 @@ import { preElabComponent } from "../../../utils/componentUtils";
 import { useDispatch } from "react-redux";
 import useKupManager from "../../../composable/useKupManager";
 import {
-  KupDataColumn,
-  KupDataRow,
+  KupDataNode,
 } from "@sme.up/ketchup/dist/types/managers/kup-data/kup-data-declarations";
 
-import { executeRowDynamism } from "../../../managers/dynamismManager";
+import { executeTreeNodeDynamism } from "../../../managers/dynamismManager";
 import { DynamismEvents } from "../../../declarations/dynamismDeclarations";
 type Props = {
   rawComponent: RawComponent;
@@ -56,22 +55,24 @@ const Img: React.FC<Props> = props => {
   });
 
 const onClick = (event) =>{
-  // const column: KupDataColumn = event.detail.column;
-  // const row: KupDataRow = event.detail.row;
-
-  // if (column && kupManager.objects.isButton(column.obj)) {
-  //   executeRowDynamism(
-  //     image.id,
-  //     image.schedaId,
-  //     column,
-  //     image.data.columns,
-  //     row,
-  //     image.dynamisms,
-  //     [DynamismEvents.CLICK],
-  //     kupManager,
-  //     dispatch,
-  //   );
-  // }
+  const columnName: null= null;
+    const node: KupDataNode = image.data[0] ? image.data[0] : null;
+    const columnArray = image.columns
+      ? kupManager.data.column.find(image.columns, {
+          name: columnName,
+        })
+      : [];
+    executeTreeNodeDynamism(
+      image.id,
+      image.schedaId,
+      columnArray && columnArray.length > 0 ? columnArray[0] : null,
+      image.columns,
+      node,
+      image.dynamisms,
+      DynamismEvents.CLICK,
+      kupManager,
+      dispatch,
+    );
 }
 
   return (

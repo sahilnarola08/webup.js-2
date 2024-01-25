@@ -120,6 +120,8 @@ export interface Image extends Component {
   data: ImageData;
   /** props */
   config: Partial<Components.KupImage>;
+  /** columns */
+  columns?: KupDataColumn[];
 }
 
 export interface Label extends Component {
