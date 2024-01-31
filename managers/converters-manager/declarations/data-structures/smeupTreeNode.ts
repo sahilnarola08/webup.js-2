@@ -10,9 +10,9 @@ import { SmeupObject } from "./smeupObject";
  * Smeup Tree Node
  */
 export interface SmeupTreeNode extends SmeupDataStructure {
-  type: SmeupDataStructureType.SMEUP_TREE_NODE;
+  type: SmeupDataStructureType.SMEUP_TREE_NODE | any;
   columns?: Column[];
-  children: SmeupTreeNode[];
+  children?: SmeupTreeNode[];
   content?: SmeupObject;
   row?: Row;
 }

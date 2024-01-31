@@ -9,7 +9,7 @@ import { KupImage } from "@sme.up/ketchup-react";
 import { RootState } from "../../../store/store";
 import { getComponentById } from "../../../store/reduces/components";
 import { useSelector } from "react-redux";
-import { preElabComponent } from "../../../utils/componentUtils";
+import { getComponentOptions, preElabComponent } from "../../../utils/componentUtils";
 import { useDispatch } from "react-redux";
 import useKupManager from "../../../composable/useKupManager";
 import {
@@ -18,14 +18,15 @@ import {
 
 import { executeTreeNodeDynamism } from "../../../managers/dynamismManager";
 import { DynamismEvents } from "../../../declarations/dynamismDeclarations";
+import { getClassNames, getTitleTag } from "../../utils";
 type Props = {
   rawComponent: RawComponent;
 };
 
 const Img: React.FC<Props> = props => {
-  const image: Image = useSelector((state: RootState) =>
+  const image = useSelector((state: RootState) =>
     getComponentById(state, props.rawComponent.id),
-  ) as Image;
+  ) as Image | any;
   const imageRef: React.RefObject<any> = useRef(null);
   const preElabOk = useRef(false);
   const firstCall = useRef(true);
@@ -75,15 +76,33 @@ const onClick = (event) =>{
     );
 }
 
-  return (
-    <KupImage
-      size-x={"auto"}
-      size-y={"auto"}
-      resource={image?.data?.resource}
-      ref={imageRef}
-      onKup-image-click={onClick}
-    ></KupImage>
-  );
+if (image) {
+  if (!image.loaded) {
+    // donothing
+  } else {
+    if (image.data) {
+      return (
+       <>
+        {getTitleTag(image)}
+        <KupImage
+          size-x={"auto"}
+          size-y={"auto"}
+          id={image.id}
+          {...image.config}
+          class={getClassNames(
+            getComponentOptions(Shapes.IMG, image.options),
+          )}
+          resource={image?.data?.resource}
+          ref={imageRef}
+          onKup-image-click={onClick}
+        ></KupImage>
+       </>
+      );
+    }
+  
+  }
+}
+  
 };
 
 export default Img;

@@ -7,6 +7,9 @@ import { getObjectIcon } from "../../../../services/iconService";
 import { isSmeupTreeNode } from "../../../../utils/smeupDataStructuresUtilities";
 import { isImageUrl, toKupObj } from "../../../../utils/smeupObjectUtilities";
 import { smeupSchObjectToSmeupObject } from "../../../utilities/smeupSchObjectToSmeupObject";
+import { objectArrayToKupTreeNodeArray } from "../../../utilities/objectArrayToKupTreeNodeArray";
+import { TreeNodeExt } from "../tre/tree";
+import { Counter } from "../../../../utils/regexUtilities";
 
 /**
  * Smeup table and Image options to Image data and config
@@ -20,9 +23,13 @@ export const imageConverter = (
   backendData: SmeupTreeNode | SmeupObjectArray,
   _kupManager: KupManager,
 ): Pick<KupImageComponent, "data" | "config"> => {
+  let data: TreeNodeExt[] = [];
+  const counter: Counter = { nr: 0 };
   if (isSmeupTreeNode(backendData)) {
+    // convert SmeupObjectArray to TreeNode[]
+    data = objectArrayToKupTreeNodeArray(backendData, options, counter);
     return {
-      data: treeNodeToImageData(backendData),
+      data: data,
       config: options,
     };
   } else {

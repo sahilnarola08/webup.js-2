@@ -60,6 +60,7 @@ export interface TreeOptions extends ComponentOptions {
  */
 export interface TreeNodeExt extends KupTreeNode {
   exec?: string;
+  resource?: string;
   path: TreeNodePath;
   children: TreeNodeExt[];
 }
