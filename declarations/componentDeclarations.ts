@@ -110,18 +110,18 @@ export interface ButtonList extends Component {
   /** data */
   data: TreeNodeExt[];
   /** props */
-  config: Partial<Components.KupButtonList>;
+  config: Partial<Components.KupButtonList> ;
 }
 export interface Image extends Component {
   type: Shapes.IMG;
   /** component options (::G.SET) */
   options?: ImageOptions;
   /** data */
-  data: ImageData | TreeNodeExt[] ;
+  data: TreeNodeExt[] | ImageData;
   /** props */
-  config: Partial<Components.KupImage>;
+  config: Partial<Components.KupImage> | ImageOptions;
   /** columns */
-  columns?: KupDataColumn[];
+  columns?: KupDataColumn[] ;
 }
 
 export interface Label extends Component {

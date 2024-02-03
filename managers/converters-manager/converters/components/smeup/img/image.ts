@@ -5,7 +5,7 @@ import {
   KupComponent,
 } from "../../../../declarations/component";
 import { YesNo } from "../../../../declarations/data-structures/general";
-import { KupDataColumn } from "@sme.up/ketchup";
+import { Components, KupDataColumn } from "@sme.up/ketchup";
 import { TreeNodeExt } from "../tre/tree";
 
 /**
@@ -14,11 +14,11 @@ import { TreeNodeExt } from "../tre/tree";
 export interface KupImageComponent extends KupComponent {
   /** data */
   // data: ImageData;
-  data:ImageData | TreeNodeExt[] ;
+  data: TreeNodeExt[] | ImageData;
   /** columns */
   columns?: KupDataColumn[];
   /** config */
-  config: ImageConfig;
+  config: Partial<Components.KupImage> | ImageOptions;
 }
 
 /**
@@ -44,7 +44,3 @@ export interface ImageOptions extends ComponentOptions {
 
 
 
-/**
- * Image config
- */
-export interface ImageConfig {}

@@ -52,7 +52,7 @@ export interface TreeOptions extends ComponentOptions {
   ShowTooltip?: YesNo;
   ShowTotal?: YesNo; //ok manca calcolo dei totali
   DftTotal?: string;
-  ShowCmdBar?: YesNo;
+ShowCmdBar?: YesNo;
 }
 
 /**
@@ -60,7 +60,7 @@ export interface TreeOptions extends ComponentOptions {
  */
 export interface TreeNodeExt extends KupTreeNode {
   exec?: string;
-  resource?: string;
+  // resource?: string;
   path: TreeNodePath;
   children: TreeNodeExt[];
 }

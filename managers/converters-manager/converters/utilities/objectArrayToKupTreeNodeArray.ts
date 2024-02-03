@@ -14,7 +14,7 @@ import { smeupSchNodeValue } from "../../utils/treeNodeUtilities";
  * @returns Ketchup tree node array
  */
 export const objectArrayToKupTreeNodeArray = (
-  schComponentData:  SmeupObjectArray | any,
+  schComponentData:  SmeupObjectArray,
   options: ComponentOptions,
   counter: Counter,
 ): TreeNodeExt[] => {

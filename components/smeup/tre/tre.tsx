@@ -213,7 +213,7 @@ const Tre: React.FC<Props> = props => {
       }
     });
   });
-
+  
   if (tree) {
     if (!tree.loaded) {
       // donothing

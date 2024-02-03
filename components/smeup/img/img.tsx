@@ -26,8 +26,7 @@ type Props = {
 const Img: React.FC<Props> = props => {
   const image = useSelector((state: RootState) =>
     getComponentById(state, props.rawComponent.id),
-  ) as Image | any;
-  const imageRef: React.RefObject<any> = useRef(null);
+  ) as Image;
   const preElabOk = useRef(false);
   const firstCall = useRef(true);
   const dispatch = useDispatch();
@@ -55,7 +54,7 @@ const Img: React.FC<Props> = props => {
     });
   });
 
-const onClick = (event) =>{
+const onClick = () =>{
   const columnName: null= null;
     const node: KupDataNode = image.data[0] ? image.data[0] : null;
     const columnArray = image.columns
@@ -91,9 +90,7 @@ if (image) {
           {...image.config}
           class={getClassNames(
             getComponentOptions(Shapes.IMG, image.options),
-          )}
-          resource={image?.data?.resource}
-          ref={imageRef}
+          )} 
           onKup-image-click={onClick}
         ></KupImage>
        </>
