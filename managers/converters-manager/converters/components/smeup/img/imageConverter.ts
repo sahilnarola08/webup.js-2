@@ -31,10 +31,11 @@ export const imageConverter = (
     const config = imageOptionsToImagePropsFromObjectArray(backendData);
     // convert SmeupObjectArray to TreeNode[]
     data = objectArrayToKupTreeNodeArray(backendData, options, counter);
-    return {
+    const ret: Pick<KupImageComponent, "data" | "config" | "columns"> = {
       data: data,
       config: config,
     };
+    return ret
   } else {
     const config = imageOptionsToImagePropsFromTreeNode(backendData);
     // convert SmeupTreeNode to TreeNode[]
@@ -58,9 +59,10 @@ export const imageConverter = (
  * @param treeNode
  * @returns
  */
-export const treeNodeToImageData = (treeNode: SmeupTreeNode): ImageData => {
+export const treeNodeToImageData = (treeNode: SmeupTreeNode): TreeNodeExt[] => {
   // create empty data
-  const imageData: ImageData = {
+  const treeNodeArray: TreeNodeExt[] = [];
+  const imageData: TreeNodeExt = {
     obj: {
       t: "",
       p: "",
@@ -88,7 +90,9 @@ export const treeNodeToImageData = (treeNode: SmeupTreeNode): ImageData => {
       }
     }
   }
-  return imageData;
+
+  treeNodeArray.push(imageData);
+  return treeNodeArray;
 };
 export const imageOptionsToImagePropsFromTreeNode = (treeNode: SmeupTreeNode): Partial<Components.KupImage> => {
   // create empty data

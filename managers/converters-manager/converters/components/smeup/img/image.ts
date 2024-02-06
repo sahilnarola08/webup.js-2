@@ -14,7 +14,7 @@ import { TreeNodeExt } from "../tre/tree";
 export interface KupImageComponent extends KupComponent {
   /** data */
   // data: ImageData;
-  data: TreeNodeExt[] | ImageData;
+  data: TreeNodeExt[];
   /** columns */
   columns?: KupDataColumn[];
   /** config */

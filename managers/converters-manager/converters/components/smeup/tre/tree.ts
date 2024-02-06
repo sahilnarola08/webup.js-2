@@ -60,7 +60,7 @@ ShowCmdBar?: YesNo;
  */
 export interface TreeNodeExt extends KupTreeNode {
   exec?: string;
-  // resource?: string;
-  path: TreeNodePath;
-  children: TreeNodeExt[];
+  resource?: string;
+  path?: TreeNodePath;
+  children?: TreeNodeExt[];
 }

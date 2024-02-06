@@ -117,7 +117,7 @@ export interface Image extends Component {
   /** component options (::G.SET) */
   options?: ImageOptions;
   /** data */
-  data: TreeNodeExt[] | ImageData;
+  data: TreeNodeExt[] ;
   /** props */
   config: Partial<Components.KupImage> | ImageOptions;
   /** columns */
